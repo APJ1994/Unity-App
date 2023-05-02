@@ -21,7 +21,7 @@ export default function TextForm(props) {
         console.log('Changes');
         setText(event.target.value)
     }
-    const [text, setText] = useState('Start Typing ,or copy paste your documents here...');
+    const [text, setText] = useState('');
   return (
     <>
     <div>
@@ -30,13 +30,13 @@ export default function TextForm(props) {
   {/* <label for="mybox" class="form-label">Example textarea</label> */}
   <textarea className="form-control" value={text} id="mybox" onChange={handleOnChanges} rows="8"></textarea>
 </div>
-<button className="btn btn-info" onClick={handleUpClick}>Convert to Uppercase</button>
-<button className="btn btn-primary mx-2" onClick={handleCapClick}>Convert to Replacememnt</button>
+<button disabled={text.length===0} className="btn btn-info mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+<button disabled={text.length===0} className="btn btn-info mx-2 my-1" onClick={handleCapClick}>Convert to Replacememnt</button>
   </div>
   <div className="container">
   <h2>Your Text Area</h2>
-  <p>Your {text.split(" ").length} and {text.length} characters</p>
-  <p>{0.008*text.split(" ").length} Minutes read</p>
+  <p>Your {text.split(" ").filter((element)=>{return element.length!==0}).length} and {text.length} characters</p>
+  <p>{0.008*text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
   <h3>Preview</h3>
   <p>{text}</p>
 

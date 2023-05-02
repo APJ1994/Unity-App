@@ -1,11 +1,11 @@
 
 import { useState } from 'react';
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-// import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom';
   
 
 function App() {
@@ -54,19 +54,19 @@ else{
   }
   return (
    <>
-    {/* <Router> */}
+    <Router>
    <Navbar title="Unity app" mode={mode} toggleMode= {toggleMode} abouttext="About"/>
    <Alert alert={alert}/>
    <div className="container my-3">
-   {/* <Routes>
+   <Routes>
           <Route exact path="/about"element={<About />}>
           </Route>
           <Route exact path="/" element={<TextForm showAlert={showAlert}heading="Enter The Test Analyze"></TextForm>}>
           </Route>
-        </Routes> */}
-   <TextForm showAlert={showAlert}heading="Enter The Test Analyze"></TextForm>
+        </Routes>
+   {/* <TextForm showAlert={showAlert}heading="Enter The Test Analyze"></TextForm> */}
    </div>
-   {/* </Router> */}
+   </Router>
    
    {/* <Navbar/> */}
    </>
