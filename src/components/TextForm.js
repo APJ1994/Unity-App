@@ -35,7 +35,7 @@ export default function TextForm(props) {
   </div>
   <div className="container">
   <h2>Your Text Area</h2>
-  <p>Your {text.split(" ").filter((element)=>{return element.length!==0}).length} and {text.length} characters</p>
+  <p>Your {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} and {text.length} characters</p>
   <p>{0.008*text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
   <h3>Preview</h3>
   <p>{text}</p>
